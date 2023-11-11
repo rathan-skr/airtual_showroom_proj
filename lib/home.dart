@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 
 
-import 'screens/remote_object.dart';
+import 'ARscreens/remote_object.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -20,13 +20,13 @@ class HomeScreen extends StatelessWidget {
 
 
 
-          ListTile(
-            onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => RemoteObject()));
-            },
-            title: Text("Remote object"),
-          ),
+          // ListTile(
+          //   onTap: () {
+          //     Navigator.of(context).push(
+          //         MaterialPageRoute(builder: (context) => RemoteObject()));
+          //   },
+          //   title: Text("Ar object"),
+          // ),
 
         ],
       ),

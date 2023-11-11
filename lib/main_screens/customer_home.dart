@@ -45,19 +45,19 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
               icon: Icon(Icons.category_outlined), label: 'Category'),
           const BottomNavigationBarItem(
               icon: Icon(Icons.store), label: 'Stores'),
-          BottomNavigationBarItem(
-            icon: Badge(
-                showBadge: context.read<Cart>().getItems.isEmpty ? false : true,
-                padding: const EdgeInsets.all(2),
-                badgeColor: Colors.yellow,
-                badgeContent: Text(
-                  context.watch<Cart>().getItems.length.toString(),
-                  style: const TextStyle(
-                      fontSize: 14, fontWeight: FontWeight.w400),
-                ),
-                child: const Icon(Icons.shopping_cart)),
-                label: 'Cart',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Badge(
+          //       showBadge: context.read<Cart>().getItems.isEmpty ? false : true,
+          //       padding: const EdgeInsets.all(2),
+          //       badgeColor: Colors.yellow,
+          //       badgeContent: Text(
+          //         context.watch<Cart>().getItems.length.toString(),
+          //         style: const TextStyle(
+          //             fontSize: 14, fontWeight: FontWeight.w400),
+          //       ),
+          //       child: const Icon(Icons.shopping_cart)),
+          //       label: 'Cart',
+          // ),
           const BottomNavigationBarItem(
               icon: Icon(Icons.person), label: 'Profile'),
         ],

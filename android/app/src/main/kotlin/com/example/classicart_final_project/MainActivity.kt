@@ -1,4 +1,4 @@
-package com.example.airtual_showroom_proj
+package com.example.classicart_final_project
 
 import io.flutter.embedding.android.FlutterActivity
 

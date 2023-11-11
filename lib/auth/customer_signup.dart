@@ -51,13 +51,19 @@ class _CustomerRegisterState extends State<CustomerRegister> {
         _pickedImageError = e;
       });
       print(_pickedImageError);
+      print("_pickedImageError");
     }
   }
 
 //select from gallery
   void _pickImageFromGallery() async {
-    try {
-      final pickedImage = await _picker.pickImage(
+    try {customers.add({
+      'name': 'John Doe',
+      'email': 'johndoe@example.com',
+      'phone': '555-555-5555',
+    });
+
+    final pickedImage = await _picker.pickImage(
           source: ImageSource.gallery,
           maxHeight: 300,
           maxWidth: 300,
@@ -89,8 +95,9 @@ class _CustomerRegisterState extends State<CustomerRegister> {
               .ref('cust-images/$email.jpg');
           await ref.putFile(File(_imageFile!.path));
           _uid = FirebaseAuth.instance.currentUser!.uid;
-
           profileImage = await ref.getDownloadURL();
+          print("profileImage");
+          print(profileImage);
           await customers.doc(_uid).set({
             'name': name,
             'email': email,
@@ -162,7 +169,7 @@ class _CustomerRegisterState extends State<CustomerRegister> {
                                 vertical: 20, horizontal: 40),
                             child: CircleAvatar(
                               radius: 60,
-                              backgroundColor: Color(0xFFFDD835),
+                              backgroundColor: Color(0xFF843F),
                               backgroundImage: _imageFile == null
                                   ? null
                                   : FileImage(File(_imageFile!.path)),

@@ -11,7 +11,7 @@ import 'main_screens/supplier_home.dart';
 import 'main_screens/welcome_screen.dart';
 import 'package:provider/provider.dart';
 import 'app.dart';
-import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
+// import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -25,10 +25,10 @@ void main() async{
     ],
     child: const MyApp()));
   WidgetsFlutterBinding.ensureInitialized();
-  print('ARCORE IS AVAILABLE?');
-  print(await ArCoreController.checkArCoreAvailability());
-  print('\nAR SERVICES INSTALLED?');
-  print(await ArCoreController.checkIsArCoreInstalled());
+  // print('ARCORE IS AVAILABLE?');
+  // print(await ArCoreController.checkArCoreAvailability());
+  // print('\nAR SERVICES INSTALLED?');
+  // print(await ArCoreController.checkIsArCoreInstalled());
 
 }
 class MyApp extends StatelessWidget {

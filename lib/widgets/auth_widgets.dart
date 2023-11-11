@@ -12,8 +12,8 @@ class AuthMainButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 30),
       child: Material(
-        color: Color(0xFFFF9800),
-        borderRadius: BorderRadius.circular(25),
+        color: Color(0xFFFF843F),
+        borderRadius: BorderRadius.circular(15),
         child: MaterialButton(
           minWidth: double.infinity,
           onPressed: onPressed,

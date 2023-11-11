@@ -17,7 +17,7 @@ import 'package:collection/collection.dart';
 import 'package:badges/badges.dart';
 
 import '../models/product_model.dart';
-import '../screens/remote_object.dart';
+import '../ARscreens/remote_object.dart';
 import 'full_screen_view.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
@@ -133,18 +133,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           ),
                         ),
 
-                        CircleAvatar(
-                          backgroundColor: Colors.white,
-                          child: IconButton(
-                            icon: const Icon(
-                              Icons.view_in_ar_sharp,
-                              color: Colors.black,
-                            ),
-                            onPressed: () {Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => RemoteObject()));
-    },
-                          ),
-                        ),
+
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -301,33 +290,33 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       const SizedBox(
                         width: 20,
                       ),
-                      IconButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const CartScreen(
-                                          back: AppBarBackButton(),
-                                        )));
-                          },
-
-                          //using badges on cart icon
-                          icon: Badge(
-                              showBadge: context.read<Cart>().getItems.isEmpty
-                                  ? false
-                                  : true,
-                              padding: const EdgeInsets.all(2),
-                              badgeColor: Colors.yellow,
-                              badgeContent: Text(
-                                context
-                                    .watch<Cart>()
-                                    .getItems
-                                    .length
-                                    .toString(),
-                                style: const TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w400),
-                              ),
-                              child: const Icon(Icons.shopping_cart))),
+                      // IconButton(
+                      //     onPressed: () {
+                      //       Navigator.push(
+                      //           context,
+                      //           MaterialPageRoute(
+                      //               builder: (context) => const CartScreen(
+                      //                     back: AppBarBackButton(),
+                      //                   )));
+                      //     },
+                      //
+                      //     //using badges on cart icon
+                      //     icon: Badge(
+                      //         showBadge: context.read<Cart>().getItems.isEmpty
+                      //             ? false
+                      //             : true,
+                      //         padding: const EdgeInsets.all(2),
+                      //         badgeColor: Colors.yellow,
+                      //         badgeContent: Text(
+                      //           context
+                      //               .watch<Cart>()
+                      //               .getItems
+                      //               .length
+                      //               .toString(),
+                      //           style: const TextStyle(
+                      //               fontSize: 14, fontWeight: FontWeight.w400),
+                      //         ),
+                      //         child: const Icon(Icons.shopping_cart))),
                     ],
                   ),
                   YellowButton(

@@ -4,6 +4,7 @@ import 'package:airtual_showroom_proj/widgets/yellow_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:airtual_showroom_proj/widgets/red_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -26,7 +27,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('images/inapp/bgimageb.png'),
+                image: AssetImage('images/inapp/Welcome11.jpeg'),
                 fit: BoxFit.cover)),
         constraints: const BoxConstraints.expand(),
         child: SafeArea(
@@ -40,10 +41,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               const SizedBox(
                 height: 120,
                 width: 200,
-                child: Image(image: AssetImage('images/inapp/logo2.png')),
+                child: Image(image: AssetImage('images/inapp/classiCart.png')),
               ),
               const Text(
-                'Airtual Showroom',
+                'Classic Cart',
                 style: TextStyle(color: Colors.white, fontSize: 30),
               ),
               Row(
@@ -165,9 +166,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                         context, '/customer_signup');
                                   },
                                   width: 0.25),
+
+                              // RedButton(
+                              //     label: 'Read Me',
+                              //     onPressed: () {
+                              //       Navigator.pushReplacementNamed(
+                              //           context, '/customer_signup');
+                              //     },
+                              //     width: 0.25),
+
+
                               const Image(
                                   image: AssetImage('images/inapp/logo2.png')),
                             ],
+
                           )),
                     ],
                   ),
@@ -224,7 +236,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               child: const Icon(
                                 Icons.person,
                                 size: 55,
-                                color: Colors.lightBlueAccent,
+                                color: Colors.red,
                               ),
                             ),
                     ],
