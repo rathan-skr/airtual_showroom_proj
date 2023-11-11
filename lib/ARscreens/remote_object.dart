@@ -30,20 +30,20 @@ class _RemoteObjectState extends State<RemoteObject> {
     arCoreController?.onPlaneTap = _handleOnPlaneTap;
   }
 
-  void _addToucano(ArCoreHitTestResult plane) {
-    final toucanNode = ArCoreReferenceNode(
+  void _addFurniyure(ArCoreHitTestResult plane) {
+    final furnitureNode = ArCoreReferenceNode(
         name: "chair",
         objectUrl:
             "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/SheenChair/glTF/SheenChair.gltf",
         position: plane.pose.translation,
         rotation: plane.pose.rotation);
 
-    arCoreController?.addArCoreNodeWithAnchor(toucanNode);
+    arCoreController?.addArCoreNodeWithAnchor(furnitureNode);
   }
 
   void _handleOnPlaneTap(List<ArCoreHitTestResult> hits) {
     final hit = hits.first;
-    _addToucano(hit);
+    _addFurniyure(hit);
   }
 
   void onTapHandler(String name) {
