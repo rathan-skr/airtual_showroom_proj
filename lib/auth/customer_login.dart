@@ -73,15 +73,17 @@ class _CustomerLoginState extends State<CustomerLogin> {
                 child: Form(
                   key: _formKey,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+
                     children: [
+                       Container(
+                        height: 50,
+                      ),
                       const AuthHeaderLabel(
                         //from auth_widget.dart for label and direct to welcome page
                         headerlabel: 'Log In',
                       ),
-                      const SizedBox(
-                        height: 50,
-                      ),
+
                       //email form
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10),
@@ -100,8 +102,12 @@ class _CustomerLoginState extends State<CustomerLogin> {
                           //controller: _emailController,
                           keyboardType: TextInputType.emailAddress,
                           decoration: textFormDecoration.copyWith(
+                              contentPadding: EdgeInsets.all(20),
+                              border: OutlineInputBorder(borderRadius: BorderRadius.only(), ),
                               labelText: 'Email Address',
                               hintText: 'Enter your email'),
+
+
                         ),
                       ),
                       //password form

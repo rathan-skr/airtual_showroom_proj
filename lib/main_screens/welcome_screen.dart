@@ -6,6 +6,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:airtual_showroom_proj/widgets/red_button.dart';
 
+import '../widgets/auth_widgets.dart';
+
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
@@ -18,7 +20,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   CollectionReference anonymous =
       FirebaseFirestore.instance.collection('anonymous');
-
 
   late String _uid;
   @override
@@ -38,211 +39,259 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 'WELCOME',
                 style: TextStyle(color: Colors.white, fontSize: 30),
               ),*/
-              const SizedBox(
-                height: 120,
-                width: 200,
-                child: Image(image: AssetImage('images/inapp/classiCart.png')),
-              ),
-              const Text(
-                'Classic Cart',
-                style: TextStyle(color: Colors.white, fontSize: 30),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Container(
-                        decoration: const BoxDecoration(
-                            color: Colors.orangeAccent,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(50),
-                                bottomLeft: Radius.circular(50))),
-                        child: const Padding(
-                          padding: EdgeInsets.all(12.0),
-                          child: Text(
-                            'Supplier',
-                            style: TextStyle(
-                                color: Colors.yellowAccent,
-                                fontSize: 26,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
+              // const SizedBox(
+              //   height: 120,
+              //   width: 200,
+              //   child: Image(image: AssetImage('images/inapp/classiCart.png')),
+              // ),
+              Container(
+                alignment: Alignment.topLeft,
+                padding: const EdgeInsets.only(left: 20, top: 50),
+                child: RichText(
+                  textAlign: TextAlign.left,
+                  text: const TextSpan(
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'Pick The Best\n',
+                        style: TextStyle(color: Colors.black, fontSize: 25),
                       ),
-                      const SizedBox(
-                        height: 6,
+                      TextSpan(
+                        text: 'Fitting Furnishings',
+                        style: TextStyle(color: Colors.black, fontSize: 40),
                       ),
-                      // supplier log
-                      Container(
-                          height: 60,
-                          width: MediaQuery.of(context).size.width * 0.9,
-                          decoration: const BoxDecoration(
-                              color: Colors.orangeAccent,
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(50),
-                                  bottomLeft: Radius.circular(50))),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Image(
-                                  image: AssetImage('images/inapp/logo2.png')),
-                              YellowButton(
-                                  label: 'Log In',
-                                  onPressed: () {
-                                    Navigator.pushReplacementNamed(
-                                        context, '/supplier_login');
-                                  },
-                                  width: 0.25),
-                              Padding(
-                                padding: const EdgeInsets.only(right: 8),
-                                child: YellowButton(
-                                    label: 'Sign Up',
-                                    onPressed: () {
-                                      Navigator.pushReplacementNamed(
-                                          context, '/supplier_signup');
-                                    },
-                                    width: 0.25),
-                              ),
-                            ],
-                          )),
-                    ],
-                  ),
-                ],
-              ),
-
-              // user log
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        decoration: const BoxDecoration(
-                            color: Color(0xFFFF9800),
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(50),
-                                bottomRight: Radius.circular(50))),
-                        child: const Padding(
-                          padding: EdgeInsets.all(12.0),
-                          child: Text(
-                            'User',
-                            style: TextStyle(
-                                color: Colors.yellowAccent,
-                                fontSize: 26,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 6,
-                      ),
-                      Container(
-                          height: 60,
-                          width: MediaQuery.of(context).size.width * 0.9,
-                          decoration: const BoxDecoration(
-                              color: Color(0xFFFF9800),
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(50),
-                                  bottomRight: Radius.circular(50))),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 8),
-                                child: YellowButton(
-                                    label: 'Log In',
-                                    onPressed: () {
-                                      Navigator.pushReplacementNamed(
-                                          context, '/customer_login');
-                                    },
-                                    width: 0.25),
-                              ),
-                              YellowButton(
-                                  label: 'Sign Up',
-                                  onPressed: () {
-                                    Navigator.pushReplacementNamed(
-                                        context, '/customer_signup');
-                                  },
-                                  width: 0.25),
-
-                              // RedButton(
-                              //     label: 'Read Me',
-                              //     onPressed: () {
-                              //       Navigator.pushReplacementNamed(
-                              //           context, '/customer_signup');
-                              //     },
-                              //     width: 0.25),
-
-
-                              const Image(
-                                  image: AssetImage('images/inapp/logo2.png')),
-                            ],
-
-                          )),
-                    ],
-                  ),
-                ],
-              ),
-              // Social media login
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 25),
-                child: Container(
-                  height: 80,
-                  decoration: const BoxDecoration(color: Color(0xFF1A237E)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      GoogleFacebookLogin(
-                        label: 'Google',
-                        onPressed: () {},
-                        child: const Image(
-                            image: AssetImage('images/inapp/google.jpg')),
-                      ),
-                      GoogleFacebookLogin(
-                        label: 'Facebook',
-                        onPressed: () {},
-                        child: const Image(
-                            image: AssetImage('images/inapp/facebook.jpg')),
-                      ),
-                      processing == true
-                          ? const CircularProgressIndicator()
-                          : GoogleFacebookLogin(
-                              label: 'Guest',
-                              onPressed: () async {
-                                setState(() {
-                                  processing = true;
-                                });
-
-                                // guest data retrieve to profile
-                                await FirebaseAuth.instance
-                                    .signInAnonymously()
-                                    .whenComplete(() async {
-                                      _uid = FirebaseAuth.instance.currentUser!.uid;
-                                  await anonymous.doc(_uid).set({
-                                    'name': '',
-                                    'email': '',
-                                    'profileimage': '',
-                                    'phone': '',
-                                    'address': '',
-                                    'cid': _uid,
-                                  });
-                                });
-
-                                Navigator.pushReplacementNamed(
-                                    context, '/customer_home');
-                              },
-                              child: const Icon(
-                                Icons.person,
-                                size: 55,
-                                color: Colors.red,
-                              ),
-                            ),
                     ],
                   ),
                 ),
-              )
+              ),
+              Container(
+                alignment: Alignment.topLeft,
+                padding: const EdgeInsets.only(left: 20, top:520),
+                child: RichText(
+                  textAlign: TextAlign.left,
+                  text: const TextSpan(
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'The best place for experiencing and  discovering  \n amazing furnishings for your happy home',
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                alignment: Alignment.topLeft,
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: AuthMainButton(
+                  mainButtonLabel: 'Get Started',
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/customer_login');
+                    // Navigator.pushReplacementNamed(context, '/supplier_login');
+                  },
+                ),
+              ),
+              //-------------------------------Supplier------------------------------//
+
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.end,
+              //   children: [
+              //     Column(
+              //       crossAxisAlignment: CrossAxisAlignment.end,
+              //       children: [
+              //         Container(
+              //           decoration: const BoxDecoration(
+              //               color: Colors.orangeAccent,
+              //               borderRadius: BorderRadius.only(
+              //                   topLeft: Radius.circular(50),
+              //                   bottomLeft: Radius.circular(50))),
+              //           child: const Padding(
+              //             padding: EdgeInsets.all(12.0),
+              //             child: Text(
+              //               'Supplier',
+              //               style: TextStyle(
+              //                   color: Colors.yellowAccent,
+              //                   fontSize: 26,
+              //                   fontWeight: FontWeight.w600),
+              //             ),
+              //           ),
+              //         ),
+              //         const SizedBox(
+              //           height: 6,
+              //         ),
+              //         // supplier log
+              //         Container(
+              //             height: 60,
+              //             width: MediaQuery.of(context).size.width * 0.9,
+              //             decoration: const BoxDecoration(
+              //                 color: Colors.orangeAccent,
+              //                 borderRadius: BorderRadius.only(
+              //                     topLeft: Radius.circular(50),
+              //                     bottomLeft: Radius.circular(50))),
+              //             child: Row(
+              //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //               children: [
+              //
+              //                 YellowButton(
+              //                     label: 'Log In',
+              //                     onPressed: () {
+              //                       Navigator.pushReplacementNamed(
+              //                           context, '/supplier_login');
+              //                     },
+              //                     width: 0.25),
+              //                 Padding(
+              //                   padding: const EdgeInsets.only(right: 8),
+              //                   child: YellowButton(
+              //                       label: 'Sign Up',
+              //                       onPressed: () {
+              //                         Navigator.pushReplacementNamed(
+              //                             context, '/supplier_signup');
+              //                       },
+              //                       width: 0.25),
+              //                 ),
+              //               ],
+              //             )),
+              //       ],
+              //     ),
+              //   ],
+              // ),
+
+              //-------------------------------------------------------------//
+
+              // user log
+              //-------------------------Buyer------------------------------//
+
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.start,
+              //   children: [
+              //     Column(
+              //       crossAxisAlignment: CrossAxisAlignment.start,
+              //       children: [
+              //         Container(
+              //           decoration: const BoxDecoration(
+              //               color: Color(0xFFFF9800),
+              //               borderRadius: BorderRadius.only(
+              //                   topRight: Radius.circular(50),
+              //                   bottomRight: Radius.circular(50))),
+              //           child: const Padding(
+              //             padding: EdgeInsets.all(12.0),
+              //             child: Text(
+              //               'User',
+              //               style: TextStyle(
+              //                   color: Colors.yellowAccent,
+              //                   fontSize: 26,
+              //                   fontWeight: FontWeight.w600),
+              //             ),
+              //           ),
+              //         ),
+              //         const SizedBox(
+              //           height: 6,
+              //         ),
+              //         Container(
+              //             height: 60,
+              //             width: MediaQuery.of(context).size.width * 0.9,
+              //             decoration: const BoxDecoration(
+              //                 color: Color(0xFFFF9800),
+              //                 borderRadius: BorderRadius.only(
+              //                     topRight: Radius.circular(50),
+              //                     bottomRight: Radius.circular(50))),
+              //             child: Row(
+              //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //               children: [
+              //                 Padding(
+              //                   padding: const EdgeInsets.only(left: 8),
+              //                   child: YellowButton(
+              //                       label: 'Log In',
+              //                       onPressed: () {
+              //                         Navigator.pushReplacementNamed(
+              //                             context, '/customer_login');
+              //                       },
+              //                       width: 0.25),
+              //                 ),
+              //                 YellowButton(
+              //                     label: 'Sign Up',
+              //                     onPressed: () {
+              //                       Navigator.pushReplacementNamed(
+              //                           context, '/customer_signup');
+              //                     },
+              //                     width: 0.25),
+              //
+              //                 // RedButton(
+              //                 //     label: 'Read Me',
+              //                 //     onPressed: () {
+              //                 //       Navigator.pushReplacementNamed(
+              //                 //           context, '/customer_signup');
+              //                 //     },
+              //                 //     width: 0.25),
+              //
+              //                 const Image(
+              //                     image: AssetImage('images/inapp/logo2.png')),
+              //               ],
+              //             )
+              //         ),
+              //       ],
+              //     ),
+              //   ],
+              // ),
+              //---------------------Buer end------------------------------------//
+              // Social media login
+              //-------------------------------------------------------------//
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(vertical: 25),
+              //   child: Container(
+              //     height: 80,
+              //     decoration: const BoxDecoration(color: Color(0xFF1A237E)),
+              //     child: Row(
+              //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+              //       children: [
+              //         GoogleFacebookLogin(
+              //           label: 'Google',
+              //           onPressed: () {},
+              //           child: const Image(
+              //               image: AssetImage('images/inapp/google.jpg')),
+              //         ),
+              //         GoogleFacebookLogin(
+              //           label: 'Facebook',
+              //           onPressed: () {},
+              //           child: const Image(
+              //               image: AssetImage('images/inapp/facebook.jpg')),
+              //         ),
+              //         processing == true
+              //             ? const CircularProgressIndicator()
+              //             : GoogleFacebookLogin(
+              //                 label: 'Guest',
+              //                 onPressed: () async {
+              //                   setState(() {
+              //                     processing = true;
+              //                   });
+              //
+              //                   // guest data retrieve to profile
+              //                   await FirebaseAuth.instance
+              //                       .signInAnonymously()
+              //                       .whenComplete(() async {
+              //                     _uid = FirebaseAuth.instance.currentUser!.uid;
+              //                     await anonymous.doc(_uid).set({
+              //                       'name': '',
+              //                       'email': '',
+              //                       'profileimage': '',
+              //                       'phone': '',
+              //                       'address': '',
+              //                       'cid': _uid,
+              //                     });
+              //                   });
+              //
+              //                   Navigator.pushReplacementNamed(
+              //                       context, '/customer_home');
+              //                 },
+              //                 child: const Icon(
+              //                   Icons.person,
+              //                   size: 55,
+              //                   color: Colors.red,
+              //                 ),
+              //               ),
+              //       ],
+              //     ),
+              //   ),
+              // )
+              //-------------------------------------------------------------//
             ],
           ),
         ),

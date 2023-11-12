@@ -13,7 +13,7 @@ class AuthMainButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 30),
       child: Material(
         color: Color(0xFFFF843F),
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(10),
         child: MaterialButton(
           minWidth: double.infinity,
           onPressed: onPressed,
@@ -21,7 +21,7 @@ class AuthMainButton extends StatelessWidget {
             mainButtonLabel,
             style: const TextStyle(
                 color: Colors.white,
-                fontWeight: FontWeight.bold,
+                // fontWeight: FontWeight.bold,
                 fontSize: 24),
           ),
         ),
