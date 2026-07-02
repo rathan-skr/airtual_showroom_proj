@@ -30,7 +30,7 @@ A **cutting-edge Flutter-based furniture e-commerce marketplace** featuring **Au
 - [Project Structure](#project-structure)
 - [Installation & Setup](#installation--setup)
 - [Usage & Workflows](#usage--workflows)
-- [State Management](state-management)
+- [State Management](#state-management)
 - [Firebase Integration](#firebase-integration)
 - [Dependencies & Libraries](#dependencies--libraries)
 - [Code Quality & Best Practices](#code-quality--best-practices)
@@ -1386,25 +1386,3 @@ MIT License - See LICENSE file for details
 **Version**: 1.0.0  
 **Maintenance Status**: ✅ Active Development  
 **Production Ready**: ✅ Yes  
-
----
-
-<div align="center">
-
-### 🌟 **Showcase Your Skills**
-
-This project is an excellent portfolio piece demonstrating:
-- Modern mobile development practices
-- Real-world e-commerce implementation
-- Emerging AR technology integration
-- Professional code quality and architecture
-
-### 💼 **Perfect For**
-- Job interviews (mobile dev, full-stack)
-- Portfolio demonstrations
-- Technical case studies
-- Open-source contributions
-
-**[⭐ Star on GitHub](https://github.com/rathan-skr/airtual_showroom_proj)** if you found this helpful!
-
-</div>
